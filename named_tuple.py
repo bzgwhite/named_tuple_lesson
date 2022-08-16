@@ -14,7 +14,7 @@ class Foot(NamedTuple):
 
 class Human(NamedTuple):
     name       : str
-    birth_date : date = date(2017,5,1) # フィールド設定時に代入することでデフォルト値の設定可能
+    birth_date : date = date(2017,5,1) # フィールド設定時代入で初期値の設定可能
     right_arm  : Arm  = Arm('伝説の右腕',Hand('伝説の右手'))
     left_arm   : Arm  = Arm(name='黄金の左腕',hand=Hand('黄金の左手'))
     right_foot : Foot = Foot('神が愛した右足')
@@ -37,6 +37,6 @@ if __name__ == '__main__':
     except Exception as e:
         print(e.__doc__)
 
-    print('--- イテレート処理ができるか ---')
+    print('--- 繰り返し処理ができるか ---')
     for parts in legend_human:
         print(parts)
